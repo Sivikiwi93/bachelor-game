@@ -28,4 +28,6 @@ public class LaserGateAudio : MonoBehaviour
         //Play audio loop for laser touching something
         Debug.Log("Player keeps touching the laser");
     }
+
+
 }
