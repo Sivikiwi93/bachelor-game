@@ -6,6 +6,7 @@ public class WindBlows : MonoBehaviour
 {
     AudioSource audioSource;
     public GameObject laser;
+    public LaserGateAudio lga;
 
     // Start is called before the first frame update
     void Start()
@@ -13,18 +14,13 @@ public class WindBlows : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            lga.TurningOff();
             laser.SetActive(false);
-            //audioSource.PlayOneShot(LaserOff);
         }
 
     }

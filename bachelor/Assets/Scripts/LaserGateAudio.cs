@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class LaserGateAudio : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioSource audioSource;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Play start audio of something smashing into a laser
-        Debug.Log("Player touched laser");
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player touched the laser");
+        }
     }
 
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //Play audio loop for laser touching something
-        Debug.Log("Player keeps touching the laser");
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player keeps touching the laser");
+        }
+        
     }
 
+    public void TurningOff()
+    {
+        audioSource.Play();
+    }
 
 }
