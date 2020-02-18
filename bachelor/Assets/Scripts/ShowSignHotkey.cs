@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShowSignHotkey : MonoBehaviour
 {
     public GameObject pressQ;
+    public GameObject signText;
     public float displayTime = 2.0f;
     float timerDisplay;
 
@@ -22,21 +23,30 @@ public class ShowSignHotkey : MonoBehaviour
             if(timerDisplay < 0)
             {
                 pressQ.SetActive(false);
+                signText.SetActive(false);
             }
         }
     }
 
-    void DisplayQ()
+    void DisplayObject(GameObject obj)
     {
         timerDisplay = displayTime;
-        pressQ.SetActive(true);
+        obj.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Touched sign");
-        DisplayQ();
+        DisplayObject(pressQ);
         
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            pressQ.SetActive(false);
+            DisplayObject(signText);
+        }
+    }
 }

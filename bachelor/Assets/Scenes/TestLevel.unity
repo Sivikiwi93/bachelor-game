@@ -24164,7 +24164,7 @@ GameObject:
   - component: {fileID: 477118189}
   - component: {fileID: 477118188}
   m_Layer: 0
-  m_Name: LaserOff
+  m_Name: LaserOffAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32118,10 +32118,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1454117448925512971, guid: 19f17df1555bef54b84007604e529a99,
-        type: 3}
+    - target: {fileID: 1657334152, guid: 19f17df1555bef54b84007604e529a99, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657334153, guid: 19f17df1555bef54b84007604e529a99, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657334153, guid: 19f17df1555bef54b84007604e529a99, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.31799996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f17df1555bef54b84007604e529a99, type: 3}
