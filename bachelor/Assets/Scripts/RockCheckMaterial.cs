@@ -5,12 +5,20 @@ using UnityEngine;
 public class RockCheckMaterial : MonoBehaviour
 {
     public GameObject self;
+
+    public AudioSource audioSource;
+
     public bool verified;
+    //private bool isOn = false;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         verified = false;
+        //audioSource.loop = isOn;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -18,6 +26,7 @@ public class RockCheckMaterial : MonoBehaviour
         if(collision.CompareTag("AudioSwitchGrass") && self.CompareTag("AudioSwitchGrass"))
         {
             verified = true;
+
         }
         else if (collision.CompareTag("AudioSwitchWater") && self.CompareTag("AudioSwitchWater"))
         {
@@ -31,6 +40,13 @@ public class RockCheckMaterial : MonoBehaviour
         {
             verified = true;
         }
+
+
+        if (collision.CompareTag("Player"))
+        {
+            audioSource.Play();
+        }
+
     }
 
 
@@ -54,6 +70,14 @@ public class RockCheckMaterial : MonoBehaviour
         {
             verified = false;
         }
+
+
+
+        if (collision.CompareTag("Player"))
+        {
+            audioSource.Stop();
+        }
+
     }
 
 

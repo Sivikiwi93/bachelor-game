@@ -6,12 +6,14 @@ public class ShowSignHotkey : MonoBehaviour
 {
     public GameObject text;
     public GameObject signText;
+    public GameObject q;
+
     public float displayTime = 2.0f;
     float timerDisplay;
 
     void Start()
     {
-        //pressQ.SetActive(false);
+        q.SetActive(false);
         timerDisplay = -1.0f;
     }
 
@@ -37,7 +39,7 @@ public class ShowSignHotkey : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Touched sign");
-        //DisplayObject(pressQ);
+        DisplayObject(q);
         
     }
 
@@ -45,8 +47,16 @@ public class ShowSignHotkey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            q.SetActive(false);
             DisplayObject(text);
             DisplayObject(signText);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Left sign");
+        q.SetActive(false);
+
     }
 }
