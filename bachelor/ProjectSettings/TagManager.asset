@@ -8,6 +8,7 @@ TagManager:
   - AudioSwitchWater
   - AudioSwitchGrass
   - AudioSwitchSand
+  - Wall
   layers:
   - Default
   - TransparentFX
