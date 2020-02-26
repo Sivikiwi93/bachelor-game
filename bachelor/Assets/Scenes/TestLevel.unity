@@ -25166,7 +25166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1102915122}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &482369548
 PrefabInstance:
@@ -31035,8 +31035,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 20716734}
-  - {fileID: 1428858339}
   - {fileID: 477118190}
+  - {fileID: 1428858339}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34317,8 +34317,9 @@ GameObject:
   - component: {fileID: 1428858339}
   - component: {fileID: 1428858338}
   - component: {fileID: 1428858340}
+  - component: {fileID: 1428858341}
   m_Layer: 0
-  m_Name: LevelMusic
+  m_Name: LevelMusic1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34335,8 +34336,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8741799236296885664, guid: 511298d9ea7cba541b60b714ac6b709e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3dd2c2747b7924546ae3f3bcca7a1611, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -34433,7 +34434,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1102915122}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1428858340
 MonoBehaviour:
@@ -34449,6 +34450,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1428858338}
   slider: {fileID: 29044767}
+--- !u!114 &1428858341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428858337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43988f07f65f5184ea2161d84e162e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music:
+  - {fileID: 8300000, guid: 3dd2c2747b7924546ae3f3bcca7a1611, type: 3}
+  - {fileID: 8300000, guid: d0d4dea4886746048bbc62368dc9a6f6, type: 3}
+  audioSource: {fileID: 1428858338}
 --- !u!1 &1429278388
 GameObject:
   m_ObjectHideFlags: 0
