@@ -14,9 +14,14 @@ public class TonePuzzle : MonoBehaviour
     public GameObject laser;
     public LaserGateAudio lga;
 
+    AudioSource audioSource;
+    public AudioClip wrong;
+    public AudioClip correct;
+
     private void Start()
     {
         counter = 0;
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -31,6 +36,7 @@ public class TonePuzzle : MonoBehaviour
         {
             if(Enumerable.SequenceEqual(bushOrder, setOrder))
             {
+                audioSource.PlayOneShot(correct);
                 lga.TurningOff();
                 laser.SetActive(false);
 
@@ -41,6 +47,7 @@ public class TonePuzzle : MonoBehaviour
             else
             {
                 //Spill lyd som sier feil
+                audioSource.PlayOneShot(wrong);
                 Array.Clear(bushOrder, 0, 4);
                 counter = 0;
             }
