@@ -11,13 +11,11 @@ public class PianoKeyPlay : MonoBehaviour
 
     public KeyCode key;
 
-    // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(key))

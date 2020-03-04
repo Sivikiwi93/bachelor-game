@@ -9,10 +9,8 @@ public class BubblingWater : MonoBehaviour
 
     public TileBase water;
     public TileBase sand;
-
     public Tilemap tilemap;
 
-    // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

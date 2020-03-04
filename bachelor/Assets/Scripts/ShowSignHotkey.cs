@@ -8,7 +8,7 @@ public class ShowSignHotkey : MonoBehaviour
     public GameObject signText;
     public GameObject q;
 
-    public float displayTime = 2.0f;
+    public float displayTime = 4.0f;
     float timerDisplay;
 
     void Start()
