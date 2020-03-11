@@ -8,8 +8,11 @@ public class TreeWhisper : MonoBehaviour
 {
 
     public int thisTreeNr;
-    public int nextWhisperNr;
+    public int nextWhisperNr = 0;
     AudioSource audioSource;
+
+    public WhisperRandom whisp;
+    int[] treeOrder;
 
 
     private void Start()
@@ -19,6 +22,7 @@ public class TreeWhisper : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GetTreeNr();
         if(collision.CompareTag("Player") && nextWhisperNr == thisTreeNr)
         {
             PlayWhisper();
@@ -30,9 +34,9 @@ public class TreeWhisper : MonoBehaviour
     {
         if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.Q))
         {
-            if (nextWhisperNr == thisTreeNr)
+            if (treeOrder[nextWhisperNr] == thisTreeNr)
             {
-
+                whisp.Increment();
             }
 
         }
@@ -41,6 +45,7 @@ public class TreeWhisper : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        GetTreeNr();
         if (collision.CompareTag("Player") && audioSource.isPlaying)
         {
             StopWhisper();
@@ -48,9 +53,10 @@ public class TreeWhisper : MonoBehaviour
     }
 
 
-    public void GetTreeNr(int nr)
+    public void GetTreeNr()
     {
-        nextWhisperNr = nr;
+        treeOrder = whisp.order;
+        nextWhisperNr = whisp.turnInOrder;
     }
 
     public void PlayWhisper()

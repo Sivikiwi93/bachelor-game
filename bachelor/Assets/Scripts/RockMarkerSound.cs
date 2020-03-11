@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Labyrinth : MonoBehaviour
+public class RockMarkerSound : MonoBehaviour
 {
-
-    AudioSource audioSource;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    public AudioSource audioSource;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +16,7 @@ public class Labyrinth : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && audioSource.isPlaying)
+        if (collision.CompareTag("Player"))
         {
             audioSource.Stop();
         }

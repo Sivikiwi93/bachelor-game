@@ -7,14 +7,24 @@ public class WhisperRandom : MonoBehaviour
 
     public GameObject[] trees;
     public int[] order;
-    public int nrOfWhispers = 4;
+    public int nrOfWhispers;
     public int[] empty;
     public int turnInOrder;
+
+    private bool isComplete;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         CreateOrder();
         turnInOrder = 0;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(turnInOrder == 5 && !isComplete)
+        {
+            //VictoryShiet
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -29,16 +39,20 @@ public class WhisperRandom : MonoBehaviour
         {
             order[i] = Random.Range(0, trees.Length);
         }
+        Debug.Log(order);
     }
 
     public void ClearOrder(int[] list)
     {
-        list = empty;
+        for (int i = 0; i < nrOfWhispers; i++)
+        {
+            order[i] = 0;
+        }
+        turnInOrder = 0;
     }
 
-    public int SendNextTree()
+    public void Increment()
     {
-        return order[turnInOrder];
         turnInOrder++;
     }
 
