@@ -23,7 +23,7 @@ public class TreeWhisper : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GetTreeNr();
-        if(collision.CompareTag("Player") && nextWhisperNr == thisTreeNr)
+        if(collision.CompareTag("Player") && treeOrder[nextWhisperNr] == thisTreeNr)
         {
             PlayWhisper();
         }
@@ -37,6 +37,7 @@ public class TreeWhisper : MonoBehaviour
             if (treeOrder[nextWhisperNr] == thisTreeNr)
             {
                 whisp.Increment();
+                StopWhisper();
             }
 
         }

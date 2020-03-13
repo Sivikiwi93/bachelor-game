@@ -19,7 +19,9 @@ public class WindBlows : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            lga.TurningOff();
+            if (laser.activeInHierarchy) {
+                lga.TurningOff();
+            }
             laser.SetActive(false);
         }
 

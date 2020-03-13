@@ -37,7 +37,10 @@ public class TonePuzzle : MonoBehaviour
             if(Enumerable.SequenceEqual(bushOrder, setOrder))
             {
                 audioSource.PlayOneShot(correct);
-                lga.TurningOff();
+                if (laser.activeInHierarchy)
+                {
+                    lga.TurningOff();
+                }
                 laser.SetActive(false);
 
                 Debug.Log("Shit Works with the combobroooo!!!!!");

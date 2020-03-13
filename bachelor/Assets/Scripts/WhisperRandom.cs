@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WhisperRandom : MonoBehaviour
 {
-
     public GameObject[] trees;
+    public GameObject laser;
+    public LaserGateAudio lga;
+
     public int[] order;
     public int nrOfWhispers;
-    public int[] empty;
     public int turnInOrder;
 
     private bool isComplete;
@@ -21,9 +22,13 @@ public class WhisperRandom : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(turnInOrder == 5 && !isComplete)
+        if(isComplete)
         {
-            //VictoryShiet
+            if (laser.activeInHierarchy)
+            {
+                lga.TurningOff();
+            }
+            laser.SetActive(false);
         }
     }
 
@@ -54,6 +59,11 @@ public class WhisperRandom : MonoBehaviour
     public void Increment()
     {
         turnInOrder++;
+        if(turnInOrder >= nrOfWhispers)
+        {
+            isComplete = true;
+            turnInOrder = 0;
+        }
     }
 
 }

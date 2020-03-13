@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class LabyrinthGoal : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip goal;
+    public GameObject laser;
+    public LaserGateAudio lga;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.PlayOneShot(goal);
-        //Unlock next path
+        if (laser.activeInHierarchy)
+        {
+            lga.TurningOff();
+        }
+        laser.SetActive(false);
+
     }
 }

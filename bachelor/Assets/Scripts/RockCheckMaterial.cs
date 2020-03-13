@@ -9,7 +9,6 @@ public class RockCheckMaterial : MonoBehaviour
     Rigidbody2D rb;
 
     public bool verified;
-    private bool isMoving;
 
 
     
@@ -20,21 +19,6 @@ public class RockCheckMaterial : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
-        if (rb.velocity.magnitude > 0.1 && !isMoving)
-        {
-            //Play drag nioce
-            Debug.Log("Rock is push");
-            isMoving = true;
-        } else if (rb.velocity.magnitude <= 0.1 && isMoving)
-        {
-            Debug.Log("Rock is stop");
-            isMoving = false;
-        }
-
-
-    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
