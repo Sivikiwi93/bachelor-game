@@ -10,11 +10,13 @@ public class ShowSignHotkey : MonoBehaviour
 
     public float displayTime = 6.0f;
     float timerDisplay;
+    private bool hasEntered;
 
     void Start()
     {
         q.SetActive(false);
         timerDisplay = -1.0f;
+        hasEntered = false;
     }
 
     void Update()
@@ -28,6 +30,13 @@ public class ShowSignHotkey : MonoBehaviour
                 signText.SetActive(false);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Q) && hasEntered)
+        {
+            q.SetActive(false);
+            DisplayObject(text);
+            DisplayObject(signText);
+        }
     }
 
     void DisplayObject(GameObject obj)
@@ -39,22 +48,13 @@ public class ShowSignHotkey : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DisplayObject(q);
+        hasEntered = true;
         
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            q.SetActive(false);
-            DisplayObject(text);
-            DisplayObject(signText);
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         q.SetActive(false);
-
+        hasEntered = false;
     }
 }

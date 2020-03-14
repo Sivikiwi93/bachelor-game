@@ -5,14 +5,14 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public GameObject item;
-    public ActivateInstrument inst;
+    public QToDeactivate ins;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            ins.hasInstrument = true;
             item.SetActive(false);
-            inst.FillAlpha();
         }
     }
 }

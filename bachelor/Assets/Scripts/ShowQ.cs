@@ -7,27 +7,32 @@ public class ShowQ : MonoBehaviour
     public GameObject q;
     public PauseMenu piano;
 
+    private bool hasEntered;
+
     void Start()
     {
         q.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        q.SetActive(true);
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && hasEntered)
         {
             piano.Pause();
             piano.PianoTime();
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        q.SetActive(true);
+        hasEntered = true;
+    }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         q.SetActive(false);
+        hasEntered = false;
     }
 }

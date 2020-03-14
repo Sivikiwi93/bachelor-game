@@ -5,18 +5,33 @@ using UnityEngine;
 public class TriggerBushTone : MonoBehaviour
 {
     public AudioSource audioSource;
-    public float bushNR;
     public TonePuzzle tonePz;
+    public float bushNR;
+    private bool hasEntered;
 
-
-    private void OnTriggerStay2D(Collider2D other)
+    private void Start()
     {
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.Q))
+        hasEntered = false;
+    }
+
+    private void Update()
+    {
+        if (hasEntered && Input.GetKeyDown(KeyCode.Q))
         {
             audioSource.Play();
             bushNR = audioSource.pitch;
             tonePz.AddAndCheckList(bushNR);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        hasEntered = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        hasEntered = false;
     }
 
 }

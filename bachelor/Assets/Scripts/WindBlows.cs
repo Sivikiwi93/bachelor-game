@@ -7,33 +7,36 @@ public class WindBlows : MonoBehaviour
     AudioSource audioSource;
     public GameObject laser;
     public LaserGateAudio lga;
+    private bool hasEntered;
 
-    // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        hasEntered = false;
     }
 
-
-    void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && hasEntered)
         {
-            if (laser.activeInHierarchy) {
+            if (laser.activeInHierarchy)
+            {
                 lga.TurningOff();
             }
             laser.SetActive(false);
         }
-
     }
+
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         audioSource.Play();
+        hasEntered = true;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         audioSource.Stop();
+        hasEntered = false;
     }
 }

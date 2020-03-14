@@ -11,6 +11,7 @@ public class PlayAndSwapTone : MonoBehaviour
     public float[] range;
     private int rangeIndex;
     public bool isCorrect;
+    private bool hasEntered;
 
 
     private void Start()
@@ -21,19 +22,11 @@ public class PlayAndSwapTone : MonoBehaviour
         ChangePitch();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.Q) && hasEntered)
         {
-            Activate();
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if(rangeIndex >= 2)
+            if (rangeIndex >= 2)
             {
                 rangeIndex = -1;
             }
@@ -45,15 +38,27 @@ public class PlayAndSwapTone : MonoBehaviour
             if (semitoneOffset == desiredOffset)
             {
                 isCorrect = true;
-            } else
+            }
+            else
             {
                 isCorrect = false;
             }
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            hasEntered = true;
+            Activate();
+        }
+    }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
+        hasEntered = false;
         Deactivate();
     }
 

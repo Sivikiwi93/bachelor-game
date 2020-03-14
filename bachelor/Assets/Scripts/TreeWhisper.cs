@@ -9,6 +9,7 @@ public class TreeWhisper : MonoBehaviour
 
     public int thisTreeNr;
     public int nextWhisperNr = 0;
+    private bool hasEntered;
     AudioSource audioSource;
 
     public WhisperRandom whisp;
@@ -18,21 +19,12 @@ public class TreeWhisper : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        hasEntered = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        GetTreeNr();
-        if(collision.CompareTag("Player") && treeOrder[nextWhisperNr] == thisTreeNr)
-        {
-            PlayWhisper();
-        }
-    }
-
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.Q))
+        if (hasEntered && Input.GetKeyDown(KeyCode.Q))
         {
             if (treeOrder[nextWhisperNr] == thisTreeNr)
             {
@@ -43,16 +35,27 @@ public class TreeWhisper : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        hasEntered = true;
+
+        GetTreeNr();
+        if(collision.CompareTag("Player") && treeOrder[nextWhisperNr] == thisTreeNr)
+        {
+            PlayWhisper();
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        hasEntered = false;
+
         GetTreeNr();
         if (collision.CompareTag("Player") && audioSource.isPlaying)
         {
             StopWhisper();
         }
     }
-
 
     public void GetTreeNr()
     {

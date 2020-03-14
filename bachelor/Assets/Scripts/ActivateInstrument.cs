@@ -6,6 +6,8 @@ public class ActivateInstrument : MonoBehaviour
 {
     SpriteRenderer sr;
     AudioSource audioSource;
+    public bool isPlaying;
+
 
     Color maxAlpha = new Color(255, 255, 255, 255);
 
@@ -13,6 +15,7 @@ public class ActivateInstrument : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        isPlaying = false;
     }
 
 
@@ -25,10 +28,12 @@ public class ActivateInstrument : MonoBehaviour
     public void PlayInstrument()
     {
         audioSource.Play();
+        isPlaying = true;
     }
 
     public void StopInstrument()
     {
+        isPlaying = false;
         audioSource.Stop();
     }
 
