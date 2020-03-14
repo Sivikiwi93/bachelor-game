@@ -11,9 +11,14 @@ public class BubblingWater : MonoBehaviour
     public TileBase sand;
     public Tilemap tilemap;
 
+    public AudioClip flushSFX;
+
+    private bool isFlush;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        isFlush = false;
     }
 
 
@@ -21,18 +26,27 @@ public class BubblingWater : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            audioSource.Stop();
+            isFlush = true;
             tilemap.SwapTile(water, sand);
+            audioSource.PlayOneShot(flushSFX);
         }
 
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.Play();
+        if (!isFlush)
+        {
+            audioSource.Play();
+        }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        audioSource.Stop();
+        if (!isFlush)
+        {
+            audioSource.Stop();
+        }
     }
 }

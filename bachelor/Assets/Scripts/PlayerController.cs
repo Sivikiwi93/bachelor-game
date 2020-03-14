@@ -30,4 +30,5 @@ public class PlayerController : MonoBehaviour
         //Handles movement
         rb.MovePosition(rb.position + (movement * moveSpeed * Time.fixedDeltaTime));
     }
+
 }
