@@ -7,9 +7,8 @@ public class ActivateInstrument : MonoBehaviour
     SpriteRenderer sr;
     AudioSource audioSource;
     public bool isPlaying;
-
-
     Color maxAlpha = new Color(255, 255, 255, 255);
+
 
     private void Start()
     {
@@ -17,8 +16,6 @@ public class ActivateInstrument : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         isPlaying = false;
     }
-
-
 
     public void FillAlpha()
     {

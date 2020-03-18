@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class OpenChest : MonoBehaviour
 {
-
     public Sprite openChest;
-    SpriteRenderer sr;
     public bool isOpen;
-
     public GameObject chestItem;
 
-    // Start is called before the first frame update
+    AudioSource audioSource;
+    SpriteRenderer sr;
+
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         isOpen = false;
         chestItem.SetActive(false);
-        
     }
 
-    // Update is called once per frame
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!isOpen)
         {
@@ -29,5 +28,10 @@ public class OpenChest : MonoBehaviour
             isOpen = true;
             chestItem.SetActive(true);
         }
+    }
+
+    public void PickUpSound(AudioClip sound)
+    {
+        audioSource.PlayOneShot(sound);
     }
 }

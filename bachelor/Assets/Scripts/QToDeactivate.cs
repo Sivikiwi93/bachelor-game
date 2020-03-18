@@ -7,7 +7,6 @@ public class QToDeactivate : MonoBehaviour
     private bool hasEntered;
     public DeactivateLaser laser;
     public ActivateInstrument ins;
-
     public bool hasInstrument;
 
 
@@ -23,6 +22,7 @@ public class QToDeactivate : MonoBehaviour
         {
             laser.Deactivate();
             ins.FillAlpha();
+
             if (ins.isPlaying)
             {
                 ins.StopInstrument();

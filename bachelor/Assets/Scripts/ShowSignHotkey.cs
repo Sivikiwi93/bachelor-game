@@ -12,6 +12,7 @@ public class ShowSignHotkey : MonoBehaviour
     float timerDisplay;
     private bool hasEntered;
 
+
     void Start()
     {
         q.SetActive(false);
@@ -49,7 +50,6 @@ public class ShowSignHotkey : MonoBehaviour
     {
         DisplayObject(q);
         hasEntered = true;
-        
     }
 
     private void OnTriggerExit2D(Collider2D collision)

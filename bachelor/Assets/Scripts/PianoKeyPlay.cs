@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PianoKeyPlay : MonoBehaviour
 {
-
     public AudioClip c;
     AudioSource audioSource;
     public float semitoneOffset;
-
     public KeyCode key;
+
 
     void Start()
     {

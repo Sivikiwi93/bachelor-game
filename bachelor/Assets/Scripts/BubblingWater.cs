@@ -6,16 +6,18 @@ using UnityEngine.Tilemaps;
 public class BubblingWater : MonoBehaviour
 {
     AudioSource audioSource;
+    public AudioClip flushSFX;
 
     public TileBase water;
     public TileBase sand;
+    public TileBase waterFade1;
+    public TileBase waterFade2;
     public Tilemap tilemap;
-
-    public AudioClip flushSFX;
 
     private bool isFlush;
     private bool hasEntered;
 
+    
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -23,18 +25,16 @@ public class BubblingWater : MonoBehaviour
         hasEntered = false;
     }
 
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) && hasEntered)
         {
             audioSource.Stop();
             isFlush = true;
-            tilemap.SwapTile(water, sand);
             audioSource.PlayOneShot(flushSFX);
+            StartCoroutine(WaterFade(water, waterFade1, waterFade2, sand));
         }
     }
-
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,5 +54,15 @@ public class BubblingWater : MonoBehaviour
         {
             audioSource.Stop();
         }
+    }
+
+    IEnumerator WaterFade(TileBase tile1, TileBase tile2, TileBase tile3, TileBase tile4)
+    {
+        yield return new WaitForSeconds(0.5f);
+        tilemap.SwapTile(tile1, tile2);
+        yield return new WaitForSeconds(0.5f);
+        tilemap.SwapTile(tile2, tile3);
+        yield return new WaitForSeconds(0.5f);
+        tilemap.SwapTile(tile3, tile4);
     }
 }

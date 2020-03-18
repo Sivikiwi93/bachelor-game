@@ -6,8 +6,8 @@ public class ShowQ : MonoBehaviour
 {
     public GameObject q;
     public PauseMenu piano;
-
     private bool hasEntered;
+
 
     void Start()
     {

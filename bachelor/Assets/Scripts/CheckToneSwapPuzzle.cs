@@ -7,8 +7,8 @@ public class CheckToneSwapPuzzle : MonoBehaviour
     public PlayAndSwapTone tone1;
     public PlayAndSwapTone tone2;
     public PlayAndSwapTone tone3;
-
     public DeactivateLaser laser;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +17,6 @@ public class CheckToneSwapPuzzle : MonoBehaviour
             tone1.Activate();
             tone2.Activate();
             tone3.Activate();
-
             CheckValidation();
         }
     }
@@ -39,5 +38,4 @@ public class CheckToneSwapPuzzle : MonoBehaviour
             laser.Deactivate();
         }
     }
-
 }

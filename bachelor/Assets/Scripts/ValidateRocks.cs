@@ -13,13 +13,12 @@ public class ValidateRocks : MonoBehaviour
 
     private bool audioPlayed;
 
+
     void Start()
     {
         audioPlayed = false;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if(sand.verified && fire.verified && water.verified && !audioPlayed)

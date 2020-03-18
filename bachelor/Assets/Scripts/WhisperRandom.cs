@@ -14,6 +14,7 @@ public class WhisperRandom : MonoBehaviour
 
     private bool isComplete;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         CreateOrder();
@@ -44,7 +45,6 @@ public class WhisperRandom : MonoBehaviour
         {
             order[i] = Random.Range(0, trees.Length);
         }
-        Debug.Log(order);
     }
 
     public void ClearOrder(int[] list)
@@ -65,5 +65,4 @@ public class WhisperRandom : MonoBehaviour
             turnInOrder = 0;
         }
     }
-
 }

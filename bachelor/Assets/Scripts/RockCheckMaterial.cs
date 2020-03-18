@@ -7,9 +7,7 @@ public class RockCheckMaterial : MonoBehaviour
     public GameObject self;
     public AudioSource audioSource;
     Rigidbody2D rb;
-
     public bool verified;
-
 
     
     void Start()
@@ -18,7 +16,6 @@ public class RockCheckMaterial : MonoBehaviour
         verified = false;
         rb = GetComponent<Rigidbody2D>();
     }
-
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -38,9 +35,7 @@ public class RockCheckMaterial : MonoBehaviour
         {
             verified = true;
         }
-
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -69,15 +64,9 @@ public class RockCheckMaterial : MonoBehaviour
             verified = false;
         }
 
-
-
         if (collision.CompareTag("Player"))
         {
             audioSource.Stop();
         }
-
     }
-
-
-
 }

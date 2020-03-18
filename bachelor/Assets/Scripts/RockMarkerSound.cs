@@ -6,11 +6,12 @@ public class RockMarkerSound : MonoBehaviour
 {
     public AudioSource audioSource;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            audioSource.Play();
+            StartCoroutine(FadeAudio.FadeIn(audioSource, 0.5f, 1));
         }
     }
 
@@ -18,7 +19,7 @@ public class RockMarkerSound : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            audioSource.Stop();
+            StartCoroutine(FadeAudio.FadeOut(audioSource, 0.5f, 1));
         }
     }
 }

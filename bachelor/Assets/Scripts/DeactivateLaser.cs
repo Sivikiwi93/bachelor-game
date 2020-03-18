@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class DeactivateLaser : MonoBehaviour
 {
-
     public GameObject laser;
     public LaserGateAudio lga;
-
-
-
 
 
     public void Deactivate()

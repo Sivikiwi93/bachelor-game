@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayAndSwapTone : MonoBehaviour
 {
-
     AudioSource tone;
+
     public float semitoneOffset;
     public float desiredOffset;
     public float[] range;
-    private int rangeIndex;
     public bool isCorrect;
+
+    private int rangeIndex;
     private bool hasEntered;
 
 
@@ -55,7 +56,6 @@ public class PlayAndSwapTone : MonoBehaviour
         }
     }
 
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         hasEntered = false;
@@ -69,12 +69,11 @@ public class PlayAndSwapTone : MonoBehaviour
 
     public void Activate()
     {
-        tone.Play();
+        StartCoroutine(FadeAudio.FadeIn(tone, 0.25f, 1));
     }
 
     public void Deactivate()
     {
-        tone.Stop();
+        StartCoroutine(FadeAudio.FadeOut(tone, 0.25f, 0));
     }
-
 }

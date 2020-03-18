@@ -9,6 +9,7 @@ public class WindBlows : MonoBehaviour
     public LaserGateAudio lga;
     private bool hasEntered;
 
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -27,16 +28,15 @@ public class WindBlows : MonoBehaviour
         }
     }
 
-
     void OnTriggerEnter2D(Collider2D collision)
     {
-        audioSource.Play();
+        StartCoroutine(FadeAudio.FadeIn(audioSource, 0.5f, 1));
         hasEntered = true;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        audioSource.Stop();
+        StartCoroutine(FadeAudio.FadeOut(audioSource, 1f, 0));
         hasEntered = false;
     }
 }

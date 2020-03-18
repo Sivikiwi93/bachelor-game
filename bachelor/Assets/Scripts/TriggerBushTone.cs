@@ -9,6 +9,7 @@ public class TriggerBushTone : MonoBehaviour
     public float bushNR;
     private bool hasEntered;
 
+
     private void Start()
     {
         hasEntered = false;
@@ -33,5 +34,4 @@ public class TriggerBushTone : MonoBehaviour
     {
         hasEntered = false;
     }
-
 }

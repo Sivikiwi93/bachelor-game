@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class MusicRandomPick : MonoBehaviour
 {
-
     public AudioClip[] music;
     public AudioSource audioSource;
-
     private int musicSelection;
+
 
     void Start()
     {

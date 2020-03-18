@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Labyrinth : MonoBehaviour
 {
-
     AudioSource audioSource;
 
     private void Start()

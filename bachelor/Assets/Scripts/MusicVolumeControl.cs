@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class MusicVolumeControl : MonoBehaviour
 {
-
     public AudioSource audioSource;
     public Slider slider;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
