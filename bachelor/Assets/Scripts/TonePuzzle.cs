@@ -7,7 +7,7 @@ using System.Linq;
 public class TonePuzzle : MonoBehaviour
 {
     public float[] bushOrder = new float[4];
-    private float[] setOrder = {1.0f, 1.1f, 1.25f, 1.3f};
+    private float[] setOrder = {1.0f, 1.25f, 1.5f, 2.0f};
     private int counter;
 
     public GameObject laser;

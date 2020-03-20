@@ -19,7 +19,7 @@ public class RockMarkerSound : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            StartCoroutine(FadeAudio.FadeOut(audioSource, 0.5f, 1));
+            StartCoroutine(FadeAudio.FadeOut(audioSource, 0.25f, 1));
         }
     }
 }
