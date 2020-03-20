@@ -15,7 +15,6 @@ public class TonePuzzle : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip wrong;
-    public AudioClip correct;
 
 
     private void Start()
@@ -33,7 +32,6 @@ public class TonePuzzle : MonoBehaviour
         {
             if(Enumerable.SequenceEqual(bushOrder, setOrder))
             {
-                audioSource.PlayOneShot(correct);
 
                 if (laser.activeInHierarchy)
                 {

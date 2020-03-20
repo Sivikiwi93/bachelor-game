@@ -29456,7 +29456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69e2fbebad757b4c910d5f813a0e008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  semitoneOffset: 9
+  semitoneOffset: 8
   desiredOffset: 7
   range:
   - 7
@@ -40617,7 +40617,6 @@ MonoBehaviour:
   laser: {fileID: 223565614}
   lga: {fileID: 477118189}
   wrong: {fileID: 8300000, guid: 25881e6edb151294db7bf1f60481a58c, type: 3}
-  correct: {fileID: 8300000, guid: 680d6cfce22986b4a98685d1a8bb38ae, type: 3}
 --- !u!82 &1829084717
 AudioSource:
   m_ObjectHideFlags: 0
@@ -44726,12 +44725,12 @@ PrefabInstance:
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.06
+      value: -19.18
       objectReference: {fileID: 0}
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.87
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}

@@ -19,7 +19,7 @@ public class PlayAndSwapTone : MonoBehaviour
     {
         tone = GetComponent<AudioSource>();
         isCorrect = false;
-        rangeIndex = 0;
+        rangeIndex = 1;
         ChangePitch();
     }
 
