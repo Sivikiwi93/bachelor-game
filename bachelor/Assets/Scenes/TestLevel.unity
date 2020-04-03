@@ -22100,7 +22100,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a53c2d89837e234aa451d35f6c8ca93, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f15746ab4493a1d48a17960220ba3e83, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -22595,7 +22595,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a53c2d89837e234aa451d35f6c8ca93, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f15746ab4493a1d48a17960220ba3e83, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -33653,7 +33653,7 @@ PrefabInstance:
     - target: {fileID: 2097597783408028058, guid: 19f17df1555bef54b84007604e529a99,
         type: 3}
       propertyPath: m_text
-      value: The owl wants to play hide and seek.
+      value: The bird wants to play hide and seek.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f17df1555bef54b84007604e529a99, type: 3}
@@ -37043,7 +37043,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a53c2d89837e234aa451d35f6c8ca93, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f15746ab4493a1d48a17960220ba3e83, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -37261,7 +37261,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a53c2d89837e234aa451d35f6c8ca93, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f15746ab4493a1d48a17960220ba3e83, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -38519,7 +38519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675295528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.38, y: 12.71, z: 0}
+  m_LocalPosition: {x: -8.38, y: 12.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1964446043}
@@ -38538,7 +38538,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.19591498, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -38549,7 +38549,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.587935, y: 1}
   m_EdgeRadius: 0
 --- !u!82 &1675295531
 AudioSource:
@@ -38772,7 +38772,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a53c2d89837e234aa451d35f6c8ca93, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f15746ab4493a1d48a17960220ba3e83, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -41203,7 +41203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878491202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.97, y: -4.52, z: 0}
+  m_LocalPosition: {x: -7.29, y: -4.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 181490299}
@@ -41333,7 +41333,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14854145, y: 0.09024811}
+  m_Offset: {x: -0.8160765, y: 1.123764}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -41344,7 +41344,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2970829, y: 1.1804962}
+  m_Size: {x: 4.673244, y: 3.247528}
   m_EdgeRadius: 0
 --- !u!1001 &1885371843
 PrefabInstance:
@@ -44725,12 +44725,12 @@ PrefabInstance:
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.18
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.55
+      value: 7.95
       objectReference: {fileID: 0}
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
