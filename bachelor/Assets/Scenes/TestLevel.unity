@@ -21791,7 +21791,7 @@ PrefabInstance:
     - target: {fileID: 2097597783408028058, guid: 19f17df1555bef54b84007604e529a99,
         type: 3}
       propertyPath: m_text
-      value: Follow the sound to get through the labyrinth.
+      value: Let the sound guide your path.
       objectReference: {fileID: 0}
     - target: {fileID: 2097597783408028058, guid: 19f17df1555bef54b84007604e529a99,
         type: 3}
@@ -46133,12 +46133,12 @@ PrefabInstance:
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.95
+      value: 8.73
       objectReference: {fileID: 0}
     - target: {fileID: 6400915998518995323, guid: d26e2f844ce139a4bb0ba02ad7d95ace,
         type: 3}
