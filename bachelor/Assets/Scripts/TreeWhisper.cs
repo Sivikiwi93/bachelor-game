@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+//using System;
 using System.Linq;
 
 public class TreeWhisper : MonoBehaviour
@@ -66,6 +66,8 @@ public class TreeWhisper : MonoBehaviour
     public void PlayWhisper()
     {
         StartCoroutine(FadeAudio.FadeIn(audioSource, 0.25f, 1));
+        audioSource.pitch 
+        = Random.Range(0.6f, 1.7f);
     }
 
     public void StopWhisper()

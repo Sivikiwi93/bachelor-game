@@ -9,6 +9,7 @@ public class OpenChest : MonoBehaviour
     public GameObject chestItem;
 
     AudioSource audioSource;
+    public AudioClip open;
     SpriteRenderer sr;
 
 
@@ -25,6 +26,7 @@ public class OpenChest : MonoBehaviour
         if (!isOpen)
         {
             sr.sprite = openChest;
+            audioSource.PlayOneShot(open);
             isOpen = true;
             chestItem.SetActive(true);
         }

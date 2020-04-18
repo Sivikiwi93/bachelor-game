@@ -23,6 +23,11 @@ public class BubblingWater : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         isFlush = false;
         hasEntered = false;
+
+        int placement = Random.Range(1, 15);
+        Vector2 pos = new Vector2(gameObject.transform.position.x + placement, gameObject.transform.position.y);
+        gameObject.transform.position = pos;
+        //Debug.Log(pos);
     }
 
     private void Update()

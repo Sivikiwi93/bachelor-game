@@ -20,10 +20,16 @@ public class TimerLogic : MonoBehaviour
 
         for(int i = 0; i < scores.Length; i++)
         {
-            scores[i] = PlayerPrefs.GetFloat(i.ToString(), 0);
+            scores[i] = PlayerPrefs.GetFloat(i.ToString(), 10000);
         }
         System.Array.Sort(scores);
         hasCompleted = PlayerPrefs.GetInt("HasScore", 0);
+
+        if(hasCompleted == 0)
+        {
+            Color a = new Color(1, 1, 1, 0);
+            textBox.CrossFadeAlpha(0, 0, false);
+        }
     }
 
 
