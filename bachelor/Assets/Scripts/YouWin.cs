@@ -8,6 +8,7 @@ public class YouWin : MonoBehaviour
     private bool startCountdown;
     private float timer = 4.0f;
     public GameObject winText;
+    public TimerLogic timerLogic;
 
 
     private void Start()
@@ -34,6 +35,7 @@ public class YouWin : MonoBehaviour
         {
             winText.SetActive(true);
             startCountdown = true;
+            timerLogic.SetHighscore();
         }
     }
 }
