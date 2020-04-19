@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PianoFreeroam.unity
     guid: b96bba191062a9f43939bf28a41c9b07
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 407115c1e6dff704aa75eb8bb9ba79f3
   m_configObjects: {}

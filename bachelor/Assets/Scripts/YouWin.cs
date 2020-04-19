@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class YouWin : MonoBehaviour
 {
     private bool startCountdown;
-    private float timer = 4.0f;
+    private float timer = 1.0f;
     public GameObject winText;
     public TimerLogic timerLogic;
 
@@ -24,7 +24,7 @@ public class YouWin : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(3);
             }
         }
     }
