@@ -8,10 +8,13 @@ public class WindBlows : MonoBehaviour
     public GameObject laser;
     public LaserGateAudio lga;
     private bool hasEntered;
-
+    private Vector2 offset;
 
     void Start()
     {
+        offset = new Vector2(Random.Range(0.0f, 10.0f), Random.Range(0.0f, 3.0f));
+        gameObject.transform.position = offset;
+
         audioSource = GetComponent<AudioSource>();
         hasEntered = false;
     }
