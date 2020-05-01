@@ -34,4 +34,19 @@ public class FadeAudio : MonoBehaviour
         audioSource.Stop();
         yield break;
     }
+
+
+    public static IEnumerator FadeMusic(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
 }

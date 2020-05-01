@@ -11,6 +11,7 @@ public class TreeWhisper : MonoBehaviour
     public int nextWhisperNr = 0;
     private bool hasEntered;
     AudioSource audioSource;
+    public AudioClip correct;
 
     public WhisperRandom whisp;
     int[] treeOrder;
@@ -29,6 +30,7 @@ public class TreeWhisper : MonoBehaviour
         {
             if (treeOrder[nextWhisperNr] == thisTreeNr)
             {
+                audioSource.PlayOneShot(correct);
                 whisp.Increment();
                 StopWhisper();
             }

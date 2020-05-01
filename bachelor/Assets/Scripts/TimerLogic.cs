@@ -15,6 +15,7 @@ public class TimerLogic : MonoBehaviour
 
     void Start()
     {
+        timeStart = 0;
         scores = new float[3];
         textBox.text = timeStart.ToString("F2");
 
@@ -73,6 +74,5 @@ public class TimerLogic : MonoBehaviour
                 break;
             }
         }
-
     }
 }
